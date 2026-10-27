@@ -4,6 +4,8 @@ import Homepage from "../views/Homepage";
 import PostIndex from "../views/PostIndex";
 import { getAllPosts, getSinglePost } from "./loaders";
 import PostShow from "../views/PostShow";
+import Login from "../views/Login";
+import Register from "../views/Register";
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
         path: '/posts/:id',
         Component: PostShow,
         loader: getSinglePost
+      },
+      {
+        path: '/login',
+        Component: Login
+      },
+      {
+        path: '/register',
+        Component: Register
       }
     ]
   }
