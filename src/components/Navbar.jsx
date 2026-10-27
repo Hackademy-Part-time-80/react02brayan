@@ -10,6 +10,9 @@ export default function Navbar() {
             <li>
               <Link to={'/posts'} className="navbar__menu__links">Posts</Link>
             </li>
+            <li>
+              <Link to={'/users'} className="navbar__menu__links">Users</Link>
+            </li>
           </ul>
           <div className="navbar__auth">
             <Link to={'/login'}>Login</Link>

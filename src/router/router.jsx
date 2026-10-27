@@ -6,6 +6,7 @@ import { getAllPosts, getSinglePost } from "./loaders";
 import PostShow from "../views/PostShow";
 import Login from "../views/Login";
 import Register from "../views/Register";
+import UserRequest from "../views/UserRequest";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path: '/posts',
         Component: PostIndex,
         loader: getAllPosts
+      },
+      {
+        path: '/users',
+        Component: UserRequest,
       },
       {
         path: '/posts/:id',
