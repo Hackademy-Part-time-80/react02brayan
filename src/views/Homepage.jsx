@@ -1,7 +1,10 @@
 export default function Homepage() {
-    return (
-        <>
-            <h1>Homepage</h1>
-        </>
-    );
+  const nome = 'Brayan Marino Vilchez Daga';
+  return (
+    <>
+      <div className="hero my-gradient">
+        <h1>{nome}</h1>
+      </div>
+    </>
+  );
 }
