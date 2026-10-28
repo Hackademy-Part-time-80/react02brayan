@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { UserContext } from "../context/UserContext";
 
 export default function Navbar() {
+  const { user, logout } = useContext(UserContext);
   return (
     <>
       <header className="navbar">
@@ -15,12 +18,25 @@ export default function Navbar() {
             </li>
           </ul>
           <div className="navbar__auth">
-            <Link to={'/login'}>Login</Link>
-            <Link to={'/register'}>Register</Link>
+            {(!user && (
+              <>
+                <Link to={'/login'}>Login</Link>
+                <Link to={'/register'}>Register</Link>
+              </>
+            )) || (
+                <>
+                  <a href="#">{user.name}</a>
+                  <a onClick={logout  }>Logout</a>
+                </>
+
+              )
+
+            }
+
           </div>
         </nav>
 
-      </header>
+      </header >
     </>
   );
 }

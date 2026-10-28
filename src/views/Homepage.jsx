@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import { Context } from "../context/Context";
+
 export default function Homepage() {
-  const nome = 'Brayan Marino Vilchez Daga';
+  const { author } = useContext(Context);
   return (
     <>
       <div className="hero my-gradient">
-        <h1>{nome}</h1>
+        <h1>{author}</h1>
       </div>
     </>
   );
