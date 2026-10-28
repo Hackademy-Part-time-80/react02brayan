@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 
 export function ContextProvider({ children }) {
-  const [author, setAuhtor] = useState('Brayan Marino VilchezDaga');
+  const [author, setAuhtor] = useState('Brayan Marino Vilchez Daga');
   return (
     <Context.Provider value={{ author }}>
       {children}

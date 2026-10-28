@@ -10,12 +10,16 @@ export default function Navbar() {
         <nav>
           <Link to={'/'} className="navbar__title">MYSITE- REACT</Link>
           <ul className="navbar__menu">
-            <li>
-              <Link to={'/posts'} className="navbar__menu__links">Posts</Link>
-            </li>
-            <li>
-              <Link to={'/users'} className="navbar__menu__links">Users</Link>
-            </li>
+            {(user && (
+              <>
+                <li>
+                  <Link to={'/posts'} className="navbar__menu__links">Posts</Link>
+                </li>
+                <li>
+                  <Link to={'/users'} className="navbar__menu__links">Users</Link>
+                </li>
+              </>
+            ))}
           </ul>
           <div className="navbar__auth">
             {(!user && (
@@ -26,7 +30,7 @@ export default function Navbar() {
             )) || (
                 <>
                   <a href="#">{user.name}</a>
-                  <a onClick={logout  }>Logout</a>
+                  <a onClick={logout}>Logout</a>
                 </>
 
               )
