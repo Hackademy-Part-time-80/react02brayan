@@ -16,7 +16,7 @@ export default function Navbar() {
                   <Link to={'/posts'} className="navbar__menu__links">Posts</Link>
                 </li>
                 <li>
-                  <Link to={'/users'} className="navbar__menu__links">Users</Link>
+                  <Link to={'/users'} className="navbar__menu__links">Users and TODO</Link>
                 </li>
               </>
             ))}
