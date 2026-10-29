@@ -1,6 +1,32 @@
+header {
+  position: sticky;
+  top: 0;
+}
+
 .navbar {
-  border-bottom: 2px solid gainsboro;
   height: 70px;
+  display: flex;
+
+}
+
+.navbar__dark {
+  background-color: #000000;
+  color: white;
+  height: 80px !important;
+}
+
+.navbar__dark a {
+  color: white;
+}
+
+.navbar__light {
+  background-color: whitesmoke;
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+.navbar__light a {
+  color: black;
 }
 
 .navbar nav {
