@@ -9,11 +9,11 @@ export default function Login() {
             <h2>Login</h2>
             <div className="w-full flex flex-col mb-[0.3rem]">
               <label htmlFor="email">Email</label>
-              <input type="text" id="email" className="form-control" placeholder="email@test.com" />
+              <input type="text" id="email" className="border border-gray-400 text-[1rem] p-[0.4rem] rounded-sm" placeholder="email@test.com" />
             </div>
             <div className="w-full flex flex-col mb-[0.3rem]">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" className="form-control" placeholder="password" />
+              <input type="password" id="password" className="border border-gray-400 text-[1rem] p-[0.4rem] rounded-sm" placeholder="password" />
             </div>
             <button className="bg-black text-white text-[1rem] p-[0.4rem] rounded-[10px]">LOGIN</button>
           </Card>
