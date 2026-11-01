@@ -4,7 +4,7 @@ export default function PostShow() {
   const [post, comments] = useLoaderData();
   return (
     <>
-      <div className="container">
+      <div className="w-8/9 mx-auto my-0  p-2">
         <h2>Post: {post.title}</h2>
         <h3>Comments:</h3>
         <ul>

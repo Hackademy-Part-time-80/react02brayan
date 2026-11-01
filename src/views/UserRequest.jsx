@@ -42,7 +42,7 @@ export default function UserRequest() {
 
   return (
     <>
-      <div className="container">
+      <div className="w-8/9 mx-auto my-0  p-2">
         <h2>Async Users List</h2>
         <button onClick={() => setUrl('https://jsonplaceholder.typicode.com/users')}>Mostrare Users</button>
         <button onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos')}>Mostrare TODO</button>

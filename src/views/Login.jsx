@@ -3,9 +3,9 @@ import Card from "../components/Card";
 export default function Login() {
   return (
     <>
-      <div className="container">
+      <div className="w-8/9 mx-auto my-0 p-2">
         <div className="container__auth">
-          <Card className="p-4 w-350px">
+          <Card className="p-4 w-[350]">
             <h2>Login</h2>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -19,7 +19,7 @@ export default function Login() {
           </Card>
 
         </div>
-      </div>
+      </div >
     </>
   );
 }

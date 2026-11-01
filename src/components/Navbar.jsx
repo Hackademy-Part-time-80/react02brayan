@@ -9,22 +9,22 @@ export default function Navbar() {
 
   return (
     <>
-      <header ref={scrolled} className={scrollY > 0 ? 'navbar navbar__dark' : 'navbar navbar__light'}>
+      <header ref={scrolled} className={scrollY > 0 ? 'navbar h-17.5 bg-black text-white' : 'navbar h-20 bg-white text-black'}>
         <nav>
-          <Link to={'/'} className="navbar__title">MYSITE- REACT</Link>
-          <ul className="navbar__menu">
+          <Link to={'/'} className={scrollY > 0 ? 'text-2xl font-bold text-white' : 'text-2xl font-bold text-black'}>MYSITE- REACT</Link>
+          <ul className="flex justify-around gap-4">
             {(user && (
               <>
                 <li>
-                  <Link to={'/posts'} className="navbar__menu__links">Posts</Link>
+                  <Link to={'/posts'} className="text-[1.2rem] font-bold">Posts</Link>
                 </li>
                 <li>
-                  <Link to={'/users'} className="navbar__menu__links">Users and TODO</Link>
+                  <Link to={'/users'} className="text-[1.2rem] font-bold">Users and TODO</Link>
                 </li>
               </>
             ))}
           </ul>
-          <div className="navbar__auth">
+          <div className="flex justify-around gap-[1.2rem]">
             {(!user && (
               <>
                 <Link to={'/login'}>Login</Link>

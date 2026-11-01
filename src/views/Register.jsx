@@ -41,10 +41,10 @@ export default function Register() {
 
   return (
     <>
-      <div className="container">
-        <div className="container__auth">
+      <div className="w-8/9 mx-auto my-0 p-2 h-screen bg-amber-500">
+        <div className="flex justify-center items-center h-full bg-blue-200 h-80vh">
           <form action="" onSubmit={handlesubmit}>
-            <Card className="p-4 w-350px">
+            <Card className="p-4 w-95">
               <h2>Register</h2>
               <div className="form-group">
                 <label htmlFor="name">Nome</label>
