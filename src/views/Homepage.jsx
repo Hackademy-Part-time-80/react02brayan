@@ -5,8 +5,8 @@ export default function Homepage() {
   const { author } = useContext(Context);
   return (
     <>
-      <div className="hero my-gradient">
-        <h1>{author}</h1>
+      <div className="h-[calc(100vh-70px)] flex justify-center items-center my-gradient">
+        <h1 className="text-7xl text-center text-white">{author}</h1>
       </div>
     </>
   );

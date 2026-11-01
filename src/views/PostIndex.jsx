@@ -11,11 +11,11 @@ export default function PostIndex() {
           {posts && posts.map((post) => {
             return (
               <>
-                <Card key={post.id} className="w-[248px] p-3">
-                  <p className="title">
+                <Card key={post.id} className="w-62 p-3">
+                  <p className="font-bold">
                     {post.title}
                   </p>
-                  <Link to={`/posts/${post.id}`}> Detagglio</Link>
+                  <Link to={`/posts/${post.id}`} className="text-blue-400 underline"> Detagglio</Link>
                 </Card>
               </>
             );

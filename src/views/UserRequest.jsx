@@ -43,9 +43,9 @@ export default function UserRequest() {
   return (
     <>
       <div className="w-8/9 mx-auto my-0  p-2">
-        <h2>Async Users List</h2>
-        <button onClick={() => setUrl('https://jsonplaceholder.typicode.com/users')}>Mostrare Users</button>
-        <button onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos')}>Mostrare TODO</button>
+        <h2 className="text-3xl font-bold mb-2">Async Users List</h2>
+        <button onClick={() => setUrl('https://jsonplaceholder.typicode.com/users')} className="bg-black text-white text-[1rem] p-2 rounded-xl me-1.5">Mostrare Users</button>
+        <button onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos')} className="bg-black text-white text-[1rem] p-2 rounded-xl me-1.5">Mostrare TODO</button>
         {/* {loading && <p>Caricando...</p>} */}
         <ul>
           {
