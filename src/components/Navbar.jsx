@@ -7,7 +7,7 @@ export default function Navbar() {
   const { user, logout } = useContext(UserContext);
   const [scrolled, scrollY] = useScroll();
 
-  const navbarClass = 'max-lg:collapse  lg:mb-48 shadow-sm w-full  sticky top-0';
+  const navbarClass = 'max-lg:collapse shadow-sm w-full sticky top-0';
 
   return (
     <>
