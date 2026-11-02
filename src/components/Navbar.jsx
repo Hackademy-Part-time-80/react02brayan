@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header ref={scrolled} className={scrollY > 0 ? 'navbar h-17.5 bg-black text-white' : 'navbar h-17.5 bg-white text-black h'}>
+      <header ref={scrolled} className={scrollY > 0 ? 'sticky top-0 h-17.5 bg-black text-white' : 'sticky top-0 h-17.5 bg-white text-black h'}>
         <nav className="flex justify-between items-center p-[1.rem] my-0 mx-auto w-7/8 h-full">
           <Link to={'/'} className={scrollY > 0 ? 'text-2xl font-bold text-white' : 'text-2xl font-bold text-black'}>MYSITE- REACT</Link>
           <ul className="flex justify-around gap-4">
