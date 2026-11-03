@@ -1,72 +1,79 @@
-import { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
 import Card from "../components/Card";
+import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router";
-
 export default function Register() {
-  const { register } = useContext(UserContext);
 
-  const [userName, setUserName] = useState();
-  const [userEmail, setUserEmail] = useState();
-  const [userPassword, setUserPassword] = useState();
-  const [userPasswordRepeat, setuserPasswordRepeat] = useState();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
+  const { sign_in } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    if (e.target.id === 'name') {
-      setUserName(e.target.value);
-    } else if (e.target.id === 'email') {
-      setUserEmail(e.target.value);
-    }
-    else if (e.target.id === 'password') {
-      setUserPassword(e.target.value);
-    }
-    else if (e.target.id === 'password_repeat') {
-      setuserPasswordRepeat(e.target.value);
-    }
-  }
+  const showData = (data) => {
+    sign_in(data);
+    navigate('/')
+  };
 
-  const handlesubmit = (e) => {
-    e.preventDefault();
-    if (userName, userEmail, userPassword, userPasswordRepeat) {
-      if (userPassword !== userPasswordRepeat) {
-        alert('le password non sono le stesse')
-        return;
-      }
-      register({ name: userName, mail: userEmail });
-    }
-    navigate("/");
-  }
 
   return (
     <>
       <div className="w-8/9 mx-auto my-0 p-2 h-[calc(100vh-70px)]">
         <div className="flex justify-center items-center h-full">
-          <form action="" onSubmit={handlesubmit}>
-            <Card className="p-4 w-95">
-              <h2>Register</h2>
-              <div className="w-full flex flex-col mb-[0.3rem]">
-                <label htmlFor="name">Nome</label>
-                <input type="text" id="name" className="border border-gray-400 text-[1rem] p-[0.4rem] rounded-sm" placeholder="Brayan Marino Vilchez Daga" onChange={handleChange} required />
-              </div>
-              <div className="w-full flex flex-col mb-[0.3rem]">
-                <label htmlFor="email">Email</label>
-                <input type="text" id="email" className="border border-gray-400 text-[1rem] p-[0.4rem] rounded-sm" placeholder="email@test.com" onChange={handleChange} required />
-              </div>
-              <div className="w-full flex flex-col mb-[0.3rem]">
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" className="border border-gray-400 text-[1rem] p-[0.4rem] rounded-sm" placeholder="password" onChange={handleChange} required />
-              </div>
-              <div className="w-full flex flex-col mb-[0.3rem]">
-                <label htmlFor="password_repeat">Password repeat  </label>
-                <input type="password" id="password_repeat" className="border border-gray-400 text-[1rem] p-[0.4rem] rounded-sm" placeholder="repeat password" onChange={handleChange} required />
-              </div>
-              <button className="bg-black text-white text-[1rem] p-[0.4rem] rounded-[10px]">Register</button>
-            </Card>
+
+          <form className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4" onSubmit={handleSubmit(showData)}>
+            <fieldset className="fieldset">
+              <label className="label">Username</label>
+              <input type="text" className="input" placeholder="username"
+                {...register('username',
+                  {
+                    required: 'Username required',
+                    maxLength: {
+                      value: 50,
+                      message: 'Maximun 50 characters'
+                    }
+                  })} />
+              {errors.username && <p className="text-red-500">{errors.username.message}</p>}
+
+            </fieldset>
+
+            <fieldset className="fieldset">
+              <label className="label">Email</label>
+              <input type="email" className="input" placeholder="Email"
+                {...register('email',
+                  {
+                    required: 'Email required',
+                    maxLength: {
+                      value: 50,
+                      message: 'Maximun 50 characters'
+                    }
+                  })} />
+              {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+
+            </fieldset>
+
+            <label className="fieldset">
+              <span className="label">Password</span>
+              <input type="password" className="input" placeholder="Password"
+                {...register('password',
+                  {
+                    required: 'Password required',
+                    maxLength: {
+                      value: 50,
+                      message: 'Maximun 50 characters'
+                    }
+                  })} />
+              {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+
+            </label>
+
+            <button className="btn btn-neutral mt-4" type="submit">Register</button>
+            <button className="btn btn-ghost mt-1" type="reset">Reset</button>
           </form>
+
+
         </div>
-      </div>
+      </div >
     </>
   );
 }

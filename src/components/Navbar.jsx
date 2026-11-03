@@ -7,7 +7,7 @@ export default function Navbar() {
   const { user, logout } = useContext(UserContext);
   const [scrolled, scrollY] = useScroll();
 
-  const navbarClass = 'max-lg:collapse shadow-sm w-full sticky top-0';
+  const navbarClass = 'max-lg:collapse shadow-sm w-full sticky top-0 z-40';
 
   return (
     <>
@@ -32,7 +32,6 @@ export default function Navbar() {
             </ul>
           </div>
           <div className="navbar-end">
-            {/* <input type="text" placeholder="Search" className="input w-64 lg:w-auto" /> */}
             <ul className="menu menu-horizontal px-1">
               {(!user && (
                 <>
@@ -41,7 +40,7 @@ export default function Navbar() {
                 </>
               )) || (
                   <>
-                    <li><a href="#">{user.name}</a> </li>
+                    <li><a href="#">{user.username}</a> </li>
                     <li> <a onClick={logout}>Logout</a></li>
                   </>
                 )
@@ -57,43 +56,6 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-
-
-      {/* <header ref={scrolled} className={scrollY > 0 ? 'sticky top-0 h-17.5 bg-black text-white' : 'sticky top-0 h-17.5 bg-white text-black h'}>
-        <nav className="flex justify-between items-center p-[1.rem] my-0 mx-auto w-7/8 h-full">
-          <Link to={'/'} className={scrollY > 0 ? 'text-2xl font-bold text-white' : 'text-2xl font-bold text-black'}>MYSITE- REACT</Link>
-          <ul className="flex justify-around gap-4">
-            {(user && (
-              <>
-                <li>
-                  <Link to={'/posts'} className="text-[1.2rem] font-bold">Posts</Link>
-                </li>
-                <li>
-                  <Link to={'/users'} className="text-[1.2rem] font-bold">Users and TODO</Link>
-                </li>
-              </>
-            ))}
-          </ul>
-          <div className="flex justify-around gap-[1.2rem]">
-            {(!user && (
-              <>
-                <Link to={'/login'}>Login</Link>
-                <Link to={'/register'}>Register</Link>
-              </>
-            )) || (
-                <>
-                  <a href="#">{user.name}</a>
-                  <a onClick={logout}>Logout</a>
-                </>
-
-              )
-
-            }
-
-          </div>
-        </nav>
-
-      </header > */}
     </>
   );
 }
